@@ -1,0 +1,5 @@
+section,winner,runner_up,winner_miou,runner_up_miou,miou_gap_winner_minus_runnerup,winner_latency_p95_ms,winner_size_mb,winner_dicta_pass,weight_sweep_stability_ratio,num_weight_points,details,best_component,worst_component,best_component_f1,worst_component_f1,component_f1_gap,test,p_value,significant_0p05,cliffs_delta_mobile_vs_efficient,median_latency_gap_ms_eff_minus_mobile
+backbone_recommendation,MobileNetV3-Small (UltraOptimizedFireNet),EfficientNet-B0 (Dual-Head),0.8296,0.8341,-0.0044999999999999485,10.05,1.7483,True,,,,,,,,,,,,,
+loss_weight_sensitivity,MobileNetV3-Small (UltraOptimizedFireNet),,,,,,,,1.0,9.0,{'MobileNetV3-Small (UltraOptimizedFireNet)': 9},,,,,,,,,,
+component_justification,,,,,,,,,,,,Thermal-only,LateFusion_CostSens,0.998198919351611,0.3365695792880259,0.6616293400635851,,,,,
+latency_significance,,,,,,,,,,,,,,,,,Mann-Whitney U (latency),9.385827100658193e-28,True,-1.0,16.29069999034982

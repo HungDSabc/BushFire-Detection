@@ -1,0 +1,77 @@
+{
+  "benchmark_metadata": {
+    "analysis_date": "2026-04-02T07:08:05.101270",
+    "total_methods_compared": 9,
+    "categories_analyzed": [
+      "Classification SOTA Methods",
+      "DICTA Shared Backbone (Ours)",
+      "Multimodal SOTA Methods",
+      "Segmentation SOTA Methods"
+    ],
+    "dicta_requirements": {
+      "min_miou": 0.8,
+      "max_size_mb": 2.0,
+      "max_inference_ms": 100.0
+    },
+    "artifact_source": "..\\..\\data\\processed\\Output\\Classification\\shared_backbone_metrics.json",
+    "version": "2.3_dicta_only_real_artifact"
+  },
+  "dicta_shared_backbone": {
+    "name": "DICTA Shared Backbone",
+    "accuracy": 0.942,
+    "precision": 0.782,
+    "recall": 0.7649,
+    "f1": 0.7734,
+    "miou": 0.8296,
+    "size_mb": 1.7483,
+    "inference_ms": 10.05,
+    "year": 2026,
+    "category": "DICTA Shared Backbone (Ours)",
+    "dicta_compliant": true
+  },
+  "performance_claims_validation": [
+    {
+      "claim": "DICTA mIoU meets minimum DICTA target",
+      "actual": 0.8296,
+      "threshold": 0.8,
+      "status": "PASS"
+    },
+    {
+      "claim": "DICTA size is within DICTA size limit",
+      "actual": 1.7483,
+      "threshold": 2.0,
+      "status": "PASS"
+    },
+    {
+      "claim": "DICTA latency is within DICTA latency limit",
+      "actual": 10.05,
+      "threshold": 100.0,
+      "status": "PASS"
+    },
+    {
+      "claim": "DICTA F1 is competitive with best SOTA baseline",
+      "actual": 0.7734,
+      "threshold": 0.958,
+      "status": "FAIL"
+    },
+    {
+      "claim": "DICTA mIoU is competitive with best SOTA baseline",
+      "actual": 0.8296,
+      "threshold": 0.847,
+      "status": "PASS"
+    }
+  ],
+  "statistical_analysis": [
+    {
+      "metric": "f1_vs_non_dicta_distribution",
+      "t_stat": 19.74900508522264,
+      "p_value": 3.8777803501454396e-05,
+      "dicta_value": 0.7734
+    }
+  ],
+  "key_findings": [
+    "SOTA claims are validated against DICTA shared-backbone real artifacts",
+    "Benchmark terminology and official claims are DICTA Shared Backbone only",
+    "DICTA model is benchmarked against published SOTA baselines with explicit pass/fail checks"
+  ]
+}

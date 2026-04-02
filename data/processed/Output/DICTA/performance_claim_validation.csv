@@ -1,0 +1,6 @@
+claim,actual,threshold,status
+DICTA mIoU meets minimum DICTA target,0.8296,0.8,PASS
+DICTA size is within DICTA size limit,1.7483,2.0,PASS
+DICTA latency is within DICTA latency limit,10.05,100.0,PASS
+DICTA F1 is competitive with best SOTA baseline,0.7734,0.958,FAIL
+DICTA mIoU is competitive with best SOTA baseline,0.8296,0.847,PASS

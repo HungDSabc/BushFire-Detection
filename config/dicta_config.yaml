@@ -1,0 +1,164 @@
+# DICTA 2026 Configuration File
+# Shared Backbone Architecture for UAV Fire Detection
+
+project:
+  name: "DICTA_Shared_Backbone"
+  description: "Unified Classification + Segmentation with Shared Backbone"
+  version: "2.0"
+  author: "BushFire-Detection Team"
+
+# Model Architecture
+model:
+  name: "UltraOptimizedFireNet"
+  backbone: "MobileNetV3-Small"
+  num_classes: 2  # Fire / No-Fire
+  num_seg_classes: 2  # Fire pixels / Background
+  input_channels: 4  # RGB + Thermal
+  input_size: 224
+  
+  variants:
+    standard:
+      feature_dim: 576
+      classifier_hidden: 256
+      seg_channels: "varying"
+      optimization: "standard"
+    
+    optimized:
+      feature_dim: 576
+      classifier_hidden: 128
+      seg_channels: 64
+      optimization: "latency-focused"
+      
+    ultra:
+      feature_dim: "auto-detected"
+      classifier_hidden: 48
+      seg_channels: 24
+      optimization: "extreme-edge (<2MB)"
+
+# Training Configuration
+training:
+  epochs: 40
+  batch_size: 16
+  learning_rate: 1.0e-4
+  weight_decay: 1.0e-5
+  
+  optimizer: "AdamW"
+  scheduler:
+    name: "ReduceLROnPlateau"
+    mode: "max"
+    factor: 0.5
+    patience: 5
+  
+  # Early stopping
+  early_stopping:
+    enabled: true
+    patience: 10
+    min_delta: 0.0005  # Allow small gains near target
+    metric: "mIoU"
+  
+  # Loss configuration
+  loss:
+    type: "MultiTaskLoss"
+    cls_weight: 0.25
+    seg_weight: 3.2
+    focal_alpha: 0.25
+    focal_gamma: 2.0
+
+# Multi-stage training schedule
+stages:
+  - name: "base"
+    epochs: 35
+    learning_rate: 1.0e-4
+    early_stopping_patience: 10
+    description: "Initial convergence"
+  
+  - name: "fine"
+    epochs: 25
+    learning_rate: 5.0e-5
+    early_stopping_patience: 12
+    description: "Fine-tuning"
+  
+  - name: "refine"
+    epochs: 20
+    learning_rate: 2.0e-5
+    early_stopping_patience: 14
+    description: "Refinement"
+  
+  - name: "polish"
+    epochs: 15
+    learning_rate: 1.0e-5
+    early_stopping_patience: 15
+    description: "Final polishing"
+
+# Data Configuration
+data:
+  dataset: "FLAME"
+  train_images_dir: "data/processed/Output/Segmentation_Augmented/Images"
+  train_masks_dir: "data/processed/Output/Segmentation_Augmented/Masks"
+  
+  train_split: 0.8
+  val_split: 0.2
+  test_split: 0.0  # Use separate test set
+  
+  image_size: 224
+  num_workers: 0  # Adjust based on system
+  
+  augmentation:
+    enabled: true
+    brightness: 0.2
+    contrast: 0.2
+    saturation: 0.2
+    hue: 0.1
+    random_flip: true
+    random_rotate: false
+
+# Target Metrics (DICTA 2026 Requirements)
+targets:
+  miou: 0.80
+  fire_iou: 0.75
+  classification_accuracy: 0.95
+  
+  # Edge constraints
+  latency_p95_ms: 100.0
+  model_size_mb: 2.0
+  throughput_fps: 50.0
+
+# Output Configuration
+output:
+  checkpoint_dir: "models/trained/dicta_shared_backbone"
+  best_model_name: "best_dicta_model.pth"
+  plots_dir: "data/processed/Output/DICTA"
+  logs_dir: "logs"
+  
+  save_interval: 1  # Save every N epochs
+  save_best_only: true
+
+# Evaluation Configuration
+evaluation:
+  max_eval_samples: 500
+  eval_batch_size: 8
+  
+  metrics:
+    - "miou"
+    - "fire_iou"
+    - "classification_accuracy"
+    - "precision"
+    - "recall"
+    - "fp_rate"
+  
+  latency_benchmark:
+    enabled: true
+    num_runs: 150
+    warmup_runs: 30
+
+# Device Configuration
+device:
+  type: "auto"  # 'cuda', 'cpu', or 'auto'
+  cuda_devices: [0]
+  precision: "float32"  # 'float32' or 'float16'
+
+# Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  log_file: "logs/dicta_training.log"

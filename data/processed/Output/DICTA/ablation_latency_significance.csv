@@ -1,0 +1,2 @@
+test,u_stat,p_value,significant_0p05,cliffs_delta_mobile_vs_efficient,median_latency_gap_ms_eff_minus_mobile
+Mann-Whitney U (latency),0.0,9.385827100658193e-28,True,-1.0,16.29069999034982

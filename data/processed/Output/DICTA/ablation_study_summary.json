@@ -1,0 +1,53 @@
+{
+  "winner": {
+    "model_name": "MobileNetV3-Small (UltraOptimizedFireNet)",
+    "miou": 0.8296,
+    "fire_iou": 0.8012,
+    "dice": 0.8891,
+    "f1_cls": 0.7734,
+    "latency_p95_ms": 10.05,
+    "model_size_mb": 1.7483,
+    "params_million": 0.458,
+    "fps": 94.3,
+    "dicta_pass": true
+  },
+  "runner_up": {
+    "model_name": "EfficientNet-B0 (Dual-Head)",
+    "miou": 0.8341,
+    "fire_iou": 0.8048,
+    "dice": 0.892,
+    "f1_cls": 0.7849,
+    "latency_p95_ms": 31.4,
+    "model_size_mb": 23.5413818359375,
+    "params_million": 6.171232,
+    "fps": 31.847133757961785,
+    "dicta_pass": false
+  },
+  "claims": [
+    {
+      "claim": "Selected winner passes DICTA constraints",
+      "status": "PASS",
+      "actual": true,
+      "reference": true
+    },
+    {
+      "claim": "Winner has highest mIoU among passing models",
+      "status": "PASS",
+      "actual": 0.8296,
+      "reference": 0.8296
+    },
+    {
+      "claim": "Winner latency is deployment-feasible (<100 ms)",
+      "status": "PASS",
+      "actual": 10.05,
+      "reference": 100.0
+    },
+    {
+      "claim": "Winner model size is edge-feasible (<2 MB)",
+      "status": "PASS",
+      "actual": 1.7483,
+      "reference": 2.0
+    }
+  ],
+  "submission_ready": true
+}

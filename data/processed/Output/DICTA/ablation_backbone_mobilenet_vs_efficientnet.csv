@@ -1,0 +1,3 @@
+model_name,miou,fire_iou,dice,f1_cls,latency_p95_ms,model_size_mb,params_million,fps,dicta_pass
+MobileNetV3-Small (UltraOptimizedFireNet),0.8296,0.8012,0.8891,0.7734,10.05,1.7483,0.458,94.3,True
+EfficientNet-B0 (Dual-Head),0.8341,0.8048,0.892,0.7849,31.4,23.5413818359375,6.171232,31.847133757961785,False

@@ -1,0 +1,84 @@
+# FLAME Hybrid Fire Detection - Git Ignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE and editors
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Large model files - consider using Git LFS
+*.pth
+*.h5
+*.pkl
+
+# Preprocessed data - can be regenerated
+Output/preprocessed_all/
+Output/preprocessed_by_class/
+Output/preprocessed_test_by_class/
+
+# Raw training data (too large for Git)
+frames/Segmentation/Data/Images/
+data/raw/frames/
+
+# Backup files
+*.bak
+*.bak_*
+*.tmp
+*.log
+
+# OS generated files
+Thumbs.db
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+
+# pytest
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json

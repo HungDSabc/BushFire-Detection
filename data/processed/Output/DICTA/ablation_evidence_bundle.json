@@ -1,0 +1,104 @@
+{
+  "actual_results": [
+    {
+      "model_name": "MobileNetV3-Small (UltraOptimizedFireNet)",
+      "miou": 0.8296,
+      "fire_iou": 0.8012,
+      "dice": 0.8891,
+      "f1_cls": 0.7734,
+      "model_size_mb": 1.7483,
+      "latency_p95_ms": 10.05,
+      "fps": 94.3,
+      "dicta_pass": true
+    },
+    {
+      "model_name": "EfficientNet-B0 (Dual-Head)",
+      "miou": 0.8341,
+      "fire_iou": 0.8048,
+      "dice": 0.892,
+      "f1_cls": 0.7849,
+      "model_size_mb": 23.5413818359375,
+      "latency_p95_ms": 31.4,
+      "fps": 31.847133757961785,
+      "dicta_pass": false
+    }
+  ],
+  "ablation_claims": [
+    {
+      "claim": "Selected winner passes DICTA constraints",
+      "status": "PASS",
+      "actual": true,
+      "reference": true
+    },
+    {
+      "claim": "Winner has highest mIoU among passing models",
+      "status": "PASS",
+      "actual": 0.8296,
+      "reference": 0.8296
+    },
+    {
+      "claim": "Winner latency is deployment-feasible (<100 ms)",
+      "status": "PASS",
+      "actual": 10.05,
+      "reference": 100.0
+    },
+    {
+      "claim": "Winner model size is edge-feasible (<2 MB)",
+      "status": "PASS",
+      "actual": 1.7483,
+      "reference": 2.0
+    }
+  ],
+  "loss_weight_winner_counts": {
+    "MobileNetV3-Small (UltraOptimizedFireNet)": 9
+  },
+  "latency_significance": [
+    {
+      "test": "Mann-Whitney U (latency)",
+      "u_stat": 0.0,
+      "p_value": 9.385827100658193e-28,
+      "significant_0p05": true,
+      "cliffs_delta_mobile_vs_efficient": -1.0,
+      "median_latency_gap_ms_eff_minus_mobile": 16.29069999034982
+    }
+  ],
+  "verdict": [
+    {
+      "section": "backbone_recommendation",
+      "winner": "MobileNetV3-Small (UltraOptimizedFireNet)",
+      "runner_up": "EfficientNet-B0 (Dual-Head)",
+      "winner_miou": 0.8296,
+      "runner_up_miou": 0.8341,
+      "miou_gap_winner_minus_runnerup": -0.0044999999999999485,
+      "winner_latency_p95_ms": 10.05,
+      "winner_size_mb": 1.7483,
+      "winner_dicta_pass": true
+    },
+    {
+      "section": "loss_weight_sensitivity",
+      "winner": "MobileNetV3-Small (UltraOptimizedFireNet)",
+      "weight_sweep_stability_ratio": 1.0,
+      "num_weight_points": 9,
+      "details": {
+        "MobileNetV3-Small (UltraOptimizedFireNet)": 9
+      }
+    },
+    {
+      "section": "component_justification",
+      "best_component": "Thermal-only",
+      "worst_component": "LateFusion_CostSens",
+      "best_component_f1": 0.998198919351611,
+      "worst_component_f1": 0.3365695792880259,
+      "component_f1_gap": 0.6616293400635851
+    },
+    {
+      "section": "latency_significance",
+      "test": "Mann-Whitney U (latency)",
+      "p_value": 9.385827100658193e-28,
+      "significant_0p05": true,
+      "cliffs_delta_mobile_vs_efficient": -1.0,
+      "median_latency_gap_ms_eff_minus_mobile": 16.29069999034982
+    }
+  ],
+  "submission_ready": true
+}

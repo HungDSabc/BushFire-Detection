@@ -1,0 +1,58 @@
+# FLAME Hybrid Architecture Configuration
+# Baseline for comparison with DICTA
+
+project:
+  name: "FLAME_Hybrid"
+  description: "Hybrid MobileNetV3-based Fire Detection (Baseline)"
+  version: "1.0"
+
+model:
+  name: "LightweightFireNet"
+  backbone: "MobileNetV3-Small"
+  num_classes: 2
+  input_size: 224
+  
+  variants:
+    minimal:
+      width_multiplier: 0.5
+      attention: false
+      fpn: false
+      parameters: 400000
+    
+    basic:
+      width_multiplier: 1.0
+      attention: false
+      fpn: true
+      parameters: 800000
+    
+    attention:
+      width_multiplier: 1.0
+      attention: true
+      fpn: true
+      parameters: 850000
+    
+    full:
+      width_multiplier: 1.5
+      attention: true
+      fpn: true
+      parameters: 1500000
+
+training:
+  epochs: 50
+  batch_size: 16
+  learning_rate: 1.0e-4
+  
+  loss:
+    type: "FPAwareFocalLoss"
+    alpha: 0.25
+    gamma: 2.0
+    fp_penalty: 2.0
+
+targets:
+  accuracy: 0.95
+  precision: 1.0
+  fp_rate: 0.01
+
+output:
+  checkpoint_dir: "models/trained/flame_hybrid"
+  best_model_name: "best_flame_model.pth"

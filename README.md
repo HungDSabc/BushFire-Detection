@@ -65,18 +65,23 @@ python -c "from models.unet_segmentation import UltraOptimizedFireNet; print('Mo
 - [SOTA_CrossModalFire_Training.ipynb](notebooks/02_training/SOTA_CrossModalFire_Training.ipynb)
 - [SOTA_EfficientFireNet_Training.ipynb](notebooks/02_training/SOTA_EfficientFireNet_Training.ipynb)
 - [SOTA_ThermalFusionNet_Training.ipynb](notebooks/02_training/SOTA_ThermalFusionNet_Training.ipynb)
-- [SOTA_YOLOFM_Training.ipynb](notebooks/02_training/SOTA_YOLOFM_Training.ipynb)
 
 **Active baseline implementations:**
-- [models/sota_baselines/](models/sota_baselines/)
-	- [crossmodal_fire_2024.py](models/sota_baselines/crossmodal_fire_2024.py)
-	- [efficientfirenet_2022.py](models/sota_baselines/efficientfirenet_2022.py)
-	- [thermalfusion_net_2023.py](models/sota_baselines/thermalfusion_net_2023.py)
-	- [unet_fire_2022.py](models/sota_baselines/unet_fire_2022.py)
-	- [yolofm_2024.py](models/sota_baselines/yolofm_2024.py)
 
-> **Note:**
-> The SOTA training notebooks and [models/sota_baselines/](models/sota_baselines/) are active benchmark components and are not archived.
+**Current SOTA Baselines and Models Used for Benchmarking:**
+
+- **UNet (Custom, Lightweight):** Ultra-lightweight U-Net for wildfire segmentation, optimized for edge deployment and 4-channel (RGBT) input.
+- **EfficientNet-B0:** SOTA baseline using EfficientNet-B0 with a lightweight decoder, designed for real-time fire segmentation and edge devices.
+- **MobileNetV3 Small:** MobileNetV3 Small backbone with dual-head for classification and segmentation, adapted for 4-channel input and low-latency edge inference.
+- **Xception:** Xception-based segmentation model for benchmarking against deeper architectures.
+- [thermalfusion_net_2023.py](models/sota_baselines/thermalfusion_net_2023.py): ThermalFusion-Net 2023 – Dual-branch RGB+thermal fusion
+- [efficientfirenet_2022.py](models/sota_baselines/efficientfirenet_2022.py): EfficientFireNet 2022 – EfficientNet-B0 backbone, edge-optimized
+- [crossmodal_fire_2024.py](models/sota_baselines/crossmodal_fire_2024.py): CrossModalFire 2024 – (placeholder, implementation WIP)
+
+Tất cả các baseline và model trên đều được sử dụng trong pipeline benchmark SOTA hiện tại. Xem chi tiết kiến trúc và tham khảo trong từng file. Để so sánh SOTA, xem thêm [SOTA_COMPARISON.md](docs/SOTA_COMPARISON.md).
+
+**Note:**
+Các notebook huấn luyện SOTA và thư mục [models/sota_baselines/](models/sota_baselines/) là thành phần benchmark chính và không bị lưu trữ vào archive.
 
 ## 5) Repository Structure
 

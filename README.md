@@ -78,11 +78,6 @@ python -c "from models.unet_segmentation import UltraOptimizedFireNet; print('Mo
 - [efficientfirenet_2022.py](models/sota_baselines/efficientfirenet_2022.py): EfficientFireNet 2022 – EfficientNet-B0 backbone, edge-optimized
 - [crossmodal_fire_2024.py](models/sota_baselines/crossmodal_fire_2024.py): CrossModalFire 2024 – (placeholder, implementation WIP)
 
-Tất cả các baseline và model trên đều được sử dụng trong pipeline benchmark SOTA hiện tại. Xem chi tiết kiến trúc và tham khảo trong từng file. Để so sánh SOTA, xem thêm [SOTA_COMPARISON.md](docs/SOTA_COMPARISON.md).
-
-**Note:**
-Các notebook huấn luyện SOTA và thư mục [models/sota_baselines/](models/sota_baselines/) là thành phần benchmark chính và không bị lưu trữ vào archive.
-
 ## 5) Repository Structure
 
 

@@ -1,8 +1,8 @@
-# DICTA 2026 Configuration File
+# MSBW-Net 2026 Configuration File
 # Shared Backbone Architecture for UAV Fire Detection
 
 project:
-  name: "DICTA_Shared_Backbone"
+  name: "MSBW-Net_Shared_Backbone"
   description: "Unified Classification + Segmentation with Shared Backbone"
   version: "2.0"
   author: "BushFire-Detection Team"
@@ -112,7 +112,7 @@ data:
     random_flip: true
     random_rotate: false
 
-# Target Metrics (DICTA 2026 Requirements)
+# Target Metrics (MSBW-Net 2026 Requirements)
 targets:
   miou: 0.80
   fire_iou: 0.75
@@ -125,9 +125,9 @@ targets:
 
 # Output Configuration
 output:
-  checkpoint_dir: "models/trained/dicta_shared_backbone"
-  best_model_name: "best_dicta_model.pth"
-  plots_dir: "data/processed/Output/DICTA"
+  checkpoint_dir: "models/trained/msbw-net_shared_backbone"
+  best_model_name: "best_msbw-net_model.pth"
+  plots_dir: "data/processed/Output/MSBW-Net"
   logs_dir: "logs"
   
   save_interval: 1  # Save every N epochs
@@ -161,4 +161,4 @@ device:
 logging:
   level: "INFO"
   format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-  log_file: "logs/dicta_training.log"
+  log_file: "logs/msbw-net_training.log"

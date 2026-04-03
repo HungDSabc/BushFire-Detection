@@ -1,5 +1,5 @@
 """
-Unit Tests for DICTA Model Architecture
+Unit Tests for MSBW-Net Model Architecture
 ========================================
 Validate model architectures, forward pass, and output shapes.
 

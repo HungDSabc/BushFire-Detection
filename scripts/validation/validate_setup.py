@@ -73,10 +73,10 @@ def check_project_structure():
         'models/mobilenet_hybrid.py',
         'models/loss_functions.py',
         'models/unet_segmentation.py',
-        'notebooks/02_training/DICTA_Shared_Backbone.ipynb',
+        'notebooks/02_training/MSBW-Net_Shared_Backbone.ipynb',
         'notebooks/03_analysis/SOTA_Benchmarking.ipynb',
         'data/processed/stage2_results_table.csv',
-        'docs/DICTA_BENCHMARK_PROTOCOL.md',
+        'docs/MSBW-Net_BENCHMARK_PROTOCOL.md',
         'requirements.txt',
         'LICENSE'
     ]
@@ -153,7 +153,7 @@ def main():
         print("\n📋 Next steps:")
         print("   1. Run notebooks in order (see EXECUTION_ORDER.md)")
         print("   2. Start with EDA: notebooks/01_eda/EDA_FLAME_FireDetection.ipynb")
-        print("   3. Train models: notebooks/02_training/DICTA_Shared_Backbone.ipynb")
+        print("   3. Train models: notebooks/02_training/MSBW-Net_Shared_Backbone.ipynb")
         print("   4. Analyze results: notebooks/03_analysis/SOTA_Benchmarking.ipynb")
     else:
         print("⚠️ SOME CHECKS FAILED - Please review the issues above")

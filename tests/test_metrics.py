@@ -1,5 +1,5 @@
 """
-Unit Tests for DICTA Metrics
+Unit Tests for MSBW-Net Metrics
 ==============================
 Validate metric calculations (mIoU, Fire IoU, latency, etc).
 

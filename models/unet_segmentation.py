@@ -1,7 +1,7 @@
 """
 Segmentation-oriented models for BushFire-Detection.
 
-This module provides the ultra-light shared-backbone model used by DICTA
+This module provides the ultra-light shared-backbone model used by MSBW-Net
 training/inference scripts and tests.
 """
 

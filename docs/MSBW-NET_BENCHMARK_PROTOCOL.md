@@ -1,7 +1,7 @@
-# DICTA Benchmark Protocol
+# MSBW-Net Benchmark Protocol
 
 ## Scope
-This protocol defines how DICTA shared-backbone models are benchmarked for accuracy, latency, and edge readiness.
+This protocol defines how MSBW-Net shared-backbone models are benchmarked for accuracy, latency, and edge readiness.
 
 ## Required Metrics
 - Segmentation mIoU
@@ -30,4 +30,4 @@ This protocol defines how DICTA shared-backbone models are benchmarked for accur
 
 ## Reporting
 - Keep a tabular comparison in docs/SOTA_COMPARISON.md.
-- For notebook reporting, include a SOTA comparison section with DICTA row + references.
+- For notebook reporting, include a SOTA comparison section with MSBW-Net row + references.

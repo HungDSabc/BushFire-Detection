@@ -1,5 +1,5 @@
 # FLAME Hybrid Architecture Configuration
-# Baseline for comparison with DICTA
+# Baseline for comparison with MSBW-Net
 
 project:
   name: "FLAME_Hybrid"

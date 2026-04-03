@@ -63,7 +63,7 @@ setup(
     package_data={
         "": ["*.md", "*.txt", "*.yml", "*.yaml"],
     },
-    keywords="fire detection, computer vision, deep learning, pytorch, edge computing, DICTA",
+    keywords="fire detection, computer vision, deep learning, pytorch, edge computing, MSBW-Net",
     project_urls={
         "Bug Reports": "https://github.com/HungDSabc/BushFire-Detection/issues",
         "Source": "https://github.com/HungDSabc/BushFire-Detection",

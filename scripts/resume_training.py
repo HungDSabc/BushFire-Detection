@@ -76,7 +76,7 @@ def resume_training(checkpoint_path, config_path=None, additional_epochs=10):
     print(f"\n✅ Resume checkpoint prepared: {resume_path}")
     
     print(f"\n📝 Note:")
-    print(f"   Run the DICTA training notebook and update config to load from:")
+    print(f"   Run the MSBW-Net training notebook and update config to load from:")
     print(f"   {resume_path}")
     print(f"\n   Or use in a Python script:")
     print(f"   >>> checkpoint = torch.load('{resume_path}')")

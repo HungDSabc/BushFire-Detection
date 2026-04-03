@@ -169,7 +169,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--checkpoint",
         type=Path,
-        default=Path(r"models/trained/dicta_shared_backbone/best_dicta_model.pth"),
+        default=Path(r"models/trained/msbw-net_shared_backbone/best_dicta_model.pth"),
         help="Path to shared-backbone checkpoint",
     )
     parser.add_argument("--image-size", type=int, default=224, help="Resize images and masks to this size")

@@ -1,6 +1,6 @@
 # Repository Structure Guide
 
-This document describes the professionalized layout for the DICTA-focused workflow.
+This document describes the professionalized layout for the MSBW-Net-focused workflow.
 
 ## Top-Level Layout
 
@@ -10,16 +10,16 @@ This document describes the professionalized layout for the DICTA-focused workfl
 - `scripts/`: Operational scripts for data prep, inference, export, and validation.
 - `notebooks/`: Active analysis and training notebooks.
 - `docs/`: Technical documentation, guides, and submission artifacts.
-- `archive/`: Legacy notebooks retained for reference only.
+- `archive/`: Legacy and experimental code (not part of primary submission).
 - `data/`, `frames/`: Datasets and processed outputs.
 - `tests/`: Unit tests for model and metric checks.
 
-## Notebook Organization
+## Notebook Status
 
-- `notebooks/01_eda/`: Exploratory analysis notebooks.
-- `notebooks/02_training/`: Active training notebooks used in DICTA workflow.
-- `notebooks/03_analysis/`: Benchmarking and analysis notebooks.
-- `notebooks/04_experiments/`: Optional experiments.
+- `notebooks/01_eda/`: Exploratory analysis notebooks ✅ Completed
+- `notebooks/02_training/`: Active training notebooks (MSBW-Net primary + legacy references) ✅ Primary complete
+- `notebooks/03_analysis/`: Benchmarking and analysis notebooks ✅ Complete
+  - **Legacy Notebooks** (reference only): `FLAME_Hybrid_Training.ipynb`, `EfficientNetB0_4ch.ipynb`, `Segmentation_Training.ipynb`
 
 ## Script Organization
 
@@ -33,12 +33,25 @@ This document describes the professionalized layout for the DICTA-focused workfl
 - `docs/submission/`: Submission-facing notes and exports.
 - `docs/project/`: Project management and restructuring history.
 - `docs/assets/eda/`: EDA figures used by docs.
+Structure & Policy
 
-## Archive Policy
+The `archive/` folder (created April 4, 2026) contains legacy and experimental code:
 
-- Legacy notebooks are moved to `archive/notebooks/`.
-- Archived files are not used as DICTA evidence.
-- New development should not target archived files.
+- `archive/README.md`: Complete inventory of archived items and reactivation guide
+- `archive/notebooks/`: Documentation for legacy training notebooks (actual files stay in `notebooks/02_training/`)
+- `archive/scripts/`: Documentation for optional/experimental utility scripts
+- `archive/models/`: Documentation for baseline model implementations (used in SOTA benchmarking)
+
+**Archive Policy**:
+- ✅ Legacy items remain FUNCTIONAL in their original locations
+- ✅ NOT part of DICTA 2026 primary submission workflow
+- ✅ Marked clearly as "Legacy Reference Only" in documentation
+- ✅ Can be reactivated for future experiments without restoration
+
+## Notebook Lifecycle
+
+- **Active Notebooks**: EDA, MSBW-Net training, SOTA benchmarking, complete pipeline analysis ✅
+- **Legacy Notebooks**: FLAME_Hybrid, EfficientNetB0_4ch, Segmentation_Training (reference only)
 
 ## Naming Conventions
 

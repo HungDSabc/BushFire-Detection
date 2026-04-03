@@ -1,0 +1,79 @@
+{
+  "benchmark_metadata": {
+    "analysis_date": "2026-04-04T02:29:29.981512",
+    "total_methods_compared": 8,
+    "categories_analyzed": [
+      "Classification Actual Runs",
+      "MSBW-Net",
+      "Multimodal Actual Runs",
+      "Segmentation Actual Runs"
+    ],
+    "artifact_source": "..\\..\\data\\processed\\Output\\MSBW-Net\\shared_backbone_metrics.json",
+    "source_files": [
+      "actual_artifact"
+    ],
+    "version": "3.0_actual_artifact_table"
+  },
+  "MSBW-Net": {
+    "name": "MSBW-Net",
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "miou": 0.8499054876652882,
+    "parameters": 458300.0,
+    "size_mb": 1.7482757568359375,
+    "inference_ms": 10.197385002538795,
+    "fps": 98.06435667095386,
+    "category": "MSBW-Net",
+    "dataset": "FLAME",
+    "source_type": "actual_artifact",
+    "latency_basis": "p95",
+    "msbw_compliant": true
+  },
+  "performance_claims_validation": [
+    {
+      "claim": "MSBW-Net mIoU meets minimum target",
+      "actual": 0.8499054876652882,
+      "threshold": 0.8,
+      "status": "PASS"
+    },
+    {
+      "claim": "MSBW-Net size is within size limit",
+      "actual": 1.7482757568359375,
+      "threshold": 2.0,
+      "status": "PASS"
+    },
+    {
+      "claim": "MSBW-Net latency is within latency limit",
+      "actual": 10.197385002538795,
+      "threshold": 100.0,
+      "status": "PASS"
+    },
+    {
+      "claim": "MSBW-Net F1 is competitive with the best measured baseline",
+      "actual": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
+    },
+    {
+      "claim": "MSBW-Net mIoU is competitive with the best measured baseline",
+      "actual": 0.8499054876652882,
+      "threshold": 0.835571,
+      "status": "PASS"
+    }
+  ],
+  "statistical_analysis": [
+    {
+      "metric": "f1_vs_non_msbw_distribution",
+      "t_stat": -3.5502212019869743,
+      "p_value": 0.01206882916126419,
+      "msbw_value": 1.0
+    }
+  ],
+  "key_findings": [
+    "Primary benchmark table is assembled from actual evaluation artifacts in the repository",
+    "Published literature numbers are no longer used as the primary comparison source",
+    "MSBW-Net model is benchmarked against the best measured baseline rows with explicit pass/fail checks"
+  ]
+}

@@ -1,10 +1,10 @@
 """
 Export PyTorch Model to ONNX Format
 ===================================
-Convert trained DICTA model to ONNX for edge deployment.
+Convert trained MSBW-Net model to ONNX for edge deployment.
 
 Usage:
-    python scripts/export_onnx.py --model best_dicta_model.pth --output model.onnx
+    python scripts/export_onnx.py --model best_msbw-net_model.pth --output model.onnx
 """
 
 import torch

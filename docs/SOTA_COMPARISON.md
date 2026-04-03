@@ -1,14 +1,14 @@
-# SOTA Comparison: DICTA vs Published Fire Detection Methods
+# SOTA Comparison: MSBW-Net vs Published Fire Detection Methods
 
 ---
 
 ## 1. Executive Summary
 
-**DICTA Shared Backbone** achieves state-of-the-art performance on fire detection while maintaining real-time inference capabilities for edge deployment.
+**MSBW-Net Shared Backbone** achieves state-of-the-art performance on fire detection while maintaining real-time inference capabilities for edge deployment.
 
 | Model | mIoU | Fire IoU | Latency (ms) | Size (MB) | FPS |
 |-------|------|----------|--------------|-----------|-----|
-| **DICTA (Ours)** | **0.8296** | **0.6620** | **13.2** | **1.75** | **75** |
+| **MSBW-Net (Ours)** | **0.8296** | **0.6620** | **13.2** | **1.75** | **75** |
 | DeepLabV3+ | 0.7845 | 0.6234 | 45.3 | 165.2 | 22 |
 | PSPNet | 0.7692 | 0.6018 | 38.7 | 142.8 | 26 |
 | U-Net | 0.7534 | 0.5892 | 28.4 | 87.3 | 35 |
@@ -24,7 +24,7 @@
 
 ## 2. Methodology Comparison
 
-### 2.1 DICTA Approach (Our Method)
+### 2.1 MSBW-Net Approach (Our Method)
 
 **Architecture**: Shared MobileNetV3-Small backbone with dual heads
 ```
@@ -71,14 +71,14 @@ Input (RGBT) → MobileNetV3 Backbone → [Classification Head, Segmentation Hea
 
 | Model | mIoU | Fire IoU | No-Fire IoU | Precision | Recall | F1-Score |
 |-------|------|----------|-------------|-----------|--------|----------|
-| **DICTA** | **0.8296** | **0.6620** | **0.9972** | **0.782** | **0.765** | **0.773** |
+| **MSBW-Net** | **0.8296** | **0.6620** | **0.9972** | **0.782** | **0.765** | **0.773** |
 | DeepLabV3+ | 0.7845 | 0.6234 | 0.9456 | 0.745 | 0.723 | 0.734 |
 | PSPNet | 0.7692 | 0.6018 | 0.9366 | 0.721 | 0.698 | 0.709 |
 | U-Net | 0.7534 | 0.5892 | 0.9176 | 0.698 | 0.672 | 0.685 |
 | SegFormer | 0.7923 | 0.6156 | 0.9690 | 0.756 | 0.734 | 0.745 |
 
 **Analysis**:
-- DICTA achieves **+5.7% mIoU** improvement over best baseline
+- MSBW-Net achieves **+5.7% mIoU** improvement over best baseline
 - **Fire IoU** (most critical metric) improved by **+6.2%**
 - **No-Fire IoU** near perfect (0.9972) due to class imbalance handling
 
@@ -86,29 +86,29 @@ Input (RGBT) → MobileNetV3 Backbone → [Classification Head, Segmentation Hea
 
 | Model | Parameters | Size (MB) | Latency P95 (ms) | Memory (MB) | FPS |
 |-------|------------|-----------|------------------|-------------|-----|
-| **DICTA** | **458K** | **1.75** | **13.2** | **45** | **75** |
+| **MSBW-Net** | **458K** | **1.75** | **13.2** | **45** | **75** |
 | DeepLabV3+ | 43.6M | 165.2 | 45.3 | 280 | 22 |
 | PSPNet | 37.8M | 142.8 | 38.7 | 245 | 26 |
 | U-Net | 23.1M | 87.3 | 28.4 | 156 | 35 |
 | SegFormer | 26.1M | 98.7 | 52.1 | 198 | 19 |
 
 **Analysis**:
-- DICTA is **95x smaller** than DeepLabV3+ (458K vs 43.6M parameters)
-- **3.4x faster** than nearest competitor (U-Net: 28.4ms vs DICTA: 13.2ms)
+- MSBW-Net is **95x smaller** than DeepLabV3+ (458K vs 43.6M parameters)
+- **3.4x faster** than nearest competitor (U-Net: 28.4ms vs MSBW-Net: 13.2ms)
 - **6x lower memory** usage enables Jetson Nano deployment
 
 ### 3.3 Edge Deployment Feasibility
 
 | Model | Jetson Nano | Jetson Xavier | Mobile GPU | CPU Only |
 |-------|-------------|---------------|------------|----------|
-| **DICTA** | ✅ **75 FPS** | ✅ 120 FPS | ✅ 45 FPS | ✅ 12 FPS |
+| **MSBW-Net** | ✅ **75 FPS** | ✅ 120 FPS | ✅ 45 FPS | ✅ 12 FPS |
 | DeepLabV3+ | ❌ 3 FPS | ✅ 22 FPS | ❌ 8 FPS | ❌ 1 FPS |
 | PSPNet | ❌ 4 FPS | ✅ 26 FPS | ❌ 9 FPS | ❌ 1 FPS |
 | U-Net | ⚠️ 8 FPS | ✅ 35 FPS | ⚠️ 15 FPS | ❌ 3 FPS |
 | SegFormer | ❌ 2 FPS | ⚠️ 19 FPS | ❌ 6 FPS | ❌ 1 FPS |
 
 **Deployment Verdict**:
-- **DICTA**: Only model achieving real-time performance on Jetson Nano
+- **MSBW-Net**: Only model achieving real-time performance on Jetson Nano
 - **Others**: Require high-end hardware (Xavier NX+) for acceptable performance
 
 ---
@@ -119,10 +119,10 @@ Input (RGBT) → MobileNetV3 Backbone → [Classification Head, Segmentation Hea
 
 | Comparison | mIoU Δ | Fire IoU Δ | Latency Δ | Size Δ | Significance |
 |------------|---------|-------------|-----------|--------|--------------|
-| DICTA vs DeepLabV3+ | +5.7% | +6.2% | -71% | -98.9% | p < 0.001 *** |
-| DICTA vs PSPNet | +7.9% | +10.0% | -66% | -98.8% | p < 0.001 *** |
-| DICTA vs U-Net | +10.1% | +12.4% | -53% | -98.0% | p < 0.001 *** |
-| DICTA vs SegFormer | +4.7% | +7.5% | -75% | -98.2% | p < 0.001 *** |
+| MSBW-Net vs DeepLabV3+ | +5.7% | +6.2% | -71% | -98.9% | p < 0.001 *** |
+| MSBW-Net vs PSPNet | +7.9% | +10.0% | -66% | -98.8% | p < 0.001 *** |
+| MSBW-Net vs U-Net | +10.1% | +12.4% | -53% | -98.0% | p < 0.001 *** |
+| MSBW-Net vs SegFormer | +4.7% | +7.5% | -75% | -98.2% | p < 0.001 *** |
 
 **Statistical Test**: Paired t-test on validation set predictions (n=500 samples)
 - All improvements are **highly significant** (p < 0.001)
@@ -132,7 +132,7 @@ Input (RGBT) → MobileNetV3 Backbone → [Classification Head, Segmentation Hea
 
 | Model | mIoU (95% CI) | Fire IoU (95% CI) |
 |-------|---------------|-------------------|
-| **DICTA** | **0.8296 ± 0.012** | **0.6620 ± 0.018** |
+| **MSBW-Net** | **0.8296 ± 0.012** | **0.6620 ± 0.018** |
 | DeepLabV3+ | 0.7845 ± 0.015 | 0.6234 ± 0.021 |
 | PSPNet | 0.7692 ± 0.017 | 0.6018 ± 0.023 |
 | U-Net | 0.7534 ± 0.019 | 0.5892 ± 0.025 |
@@ -144,7 +144,7 @@ Input (RGBT) → MobileNetV3 Backbone → [Classification Head, Segmentation Hea
 
 ### 5.1 Success Cases
 
-**DICTA Advantages**:
+**MSBW-Net Advantages**:
 - **Small Fire Detection**: Superior performance on small fire regions
 - **Boundary Precision**: Sharp fire boundaries due to multi-task learning
 - **False Positive Reduction**: Lower FP rate (0.14% vs 0.23% average)
@@ -158,7 +158,7 @@ Input (RGBT) → MobileNetV3 Backbone → [Classification Head, Segmentation Hea
 - **Sunset/Sunrise**: Orange/red lighting conditions
 - **Small Fire Regions**: <1% of image area
 
-**DICTA Specific**:
+**MSBW-Net Specific**:
 - **Thermal Dependency**: Performance drops without thermal channel
 - **Resolution Sensitivity**: Optimized for 224x224 input
 
@@ -166,7 +166,7 @@ Input (RGBT) → MobileNetV3 Backbone → [Classification Head, Segmentation Hea
 
 | Model | FLOPs (G) | MAC (M) | Memory (MB) | Batch Size (Nano) |
 |-------|-----------|---------|-------------|-------------------|
-| **DICTA** | **0.12** | **57.7** | **45** | **8** |
+| **MSBW-Net** | **0.12** | **57.7** | **45** | **8** |
 | DeepLabV3+ | 47.3 | 23,456 | 280 | 1 |
 | PSPNet | 42.1 | 20,987 | 245 | 1 |
 | U-Net | 18.7 | 9,234 | 156 | 2 |
@@ -184,7 +184,7 @@ Input (RGBT) → MobileNetV3 Backbone → [Classification Head, Segmentation Hea
 | 2017 | PSPNet | 0.7692 | Pyramid pooling | Memory intensive |
 | 2018 | DeepLabV3+ | 0.7845 | ASPP + decoder | Large model size |
 | 2021 | SegFormer | 0.7923 | Vision Transformer | Slow inference |
-| **2026** | **DICTA (Ours)** | **0.8296** | **Shared backbone** | **Thermal dependency** |
+| **2026** | **MSBW-Net (Ours)** | **0.8296** | **Shared backbone** | **Thermal dependency** |
 
 ### 6.2 Contribution Significance
 
@@ -209,7 +209,7 @@ Input (RGBT) → MobileNetV3 Backbone → [Classification Head, Segmentation Hea
 
 ### 7.1 Current Limitations
 
-**DICTA Limitations**:
+**MSBW-Net Limitations**:
 - **Thermal Dependency**: Requires RGBT input (not pure RGB)
 - **Resolution Fixed**: Optimized for 224x224 (not multi-scale)
 - **Dataset Specific**: Trained on FLAME dataset only
@@ -235,7 +235,7 @@ Input (RGBT) → MobileNetV3 Backbone → [Classification Head, Segmentation Hea
 
 ## 8. Conclusion
 
-**DICTA Shared Backbone** represents a significant advancement in fire detection technology:
+**MSBW-Net Shared Backbone** represents a significant advancement in fire detection technology:
 
 1. **Performance**: Achieves new SOTA with 0.8296 mIoU (+5.7% improvement)
 2. **Efficiency**: 71% faster inference with 98.9% smaller model
@@ -259,5 +259,5 @@ Input (RGBT) → MobileNetV3 Backbone → [Classification Head, Segmentation Hea
 ---
 
 **Last Updated**: April 2, 2026  
-**Evaluation Protocol**: DICTA Benchmark Protocol v1.1  
+**Evaluation Protocol**: MSBW-Net Benchmark Protocol v1.1  
 **Hardware**: Jetson Nano 2GB, Xavier NX, RTX 3080

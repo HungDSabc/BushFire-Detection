@@ -1,0 +1,34 @@
+{
+  "split_source": "c:\\Users\\Admin\\OneDrive - SP JAIN SCHOOL OF GLOBAL MANAGEMENT\\Desktop\\BushFire-Detection\\config\\flame_strict_split_seed42.json",
+  "split_fingerprint": {
+    "seed": 42,
+    "ratios": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15
+    }
+  },
+  "sample_counts": {
+    "train": 565,
+    "val": 121,
+    "test": 122
+  },
+  "performance_metrics": {
+    "miou": 0.7154538184404373,
+    "fire_iou": 0.43633708357810974,
+    "fire_f1": 0.8026230224783744,
+    "pixel_accuracy": 0.9945932626724243,
+    "precision": 0.7930379211902618,
+    "recall": 0.8124426603317261,
+    "f1": 0.8026230224783744
+  },
+  "model_statistics": {
+    "parameters": 31002554,
+    "model_size_mb": 118.5940170288086
+  },
+  "latency": {
+    "p95_ms": 72.31171131134033,
+    "mean_ms": 62.65225648880005,
+    "fps": 15.961117061741643
+  }
+}

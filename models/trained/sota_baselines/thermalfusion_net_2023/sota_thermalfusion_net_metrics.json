@@ -1,0 +1,68 @@
+{
+  "model_name": "ThermalFusion-Net (2023)",
+  "dataset": "FLAME Augmented",
+  "checkpoint_path": "c:\\SPJAIN\\BushFire-Detection\\models\\trained\\sota_baselines\\thermalfusion_net_2023\\best_model.pth",
+  "model_size_mb": 6.28,
+  "targets": {
+    "miou_target": 0.81,
+    "model_size_mb_max": 8.0
+  },
+  "metrics": {
+    "miou": 0.4152782749045979,
+    "f1": 0.5644999254833568,
+    "params_m": 1.647901,
+    "flops_g": 2.34356736,
+    "latency_p95_ms": 74.67532997688977,
+    "latency_p99_ms": 116.14376402256626,
+    "latency_mean_ms": 70.3677829989465
+  },
+  "training": {
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "scheduler": "OneCycleLR",
+    "epochs_planned": 35,
+    "epochs_run": 19
+  },
+  "dataset_split": {
+    "train_samples": 646,
+    "val_samples": 162,
+    "total_samples": 808
+  },
+  "strict_test_evaluation": {
+    "split": {
+      "source": "locked-existing",
+      "locked_split_file": "c:\\SPJAIN\\BushFire-Detection\\data\\processed\\Output\\DICTA\\flame_strict_split_seed42.json",
+      "train_samples": 646,
+      "val_samples": 80,
+      "test_samples": 82,
+      "total_samples": 808,
+      "disjoint": true,
+      "full_coverage": true,
+      "stored_split_signature": "9158fd7a915daf798392349c0b6c781b6e89fe6d468db4785026eac89bed695b",
+      "computed_split_signature": "d85b0056df5e3aedf0a24aa02fc24cf965eb28cc4625ae4c06bda76d4ccfe303",
+      "stored_sample_signature": "a08d2599bd3a679fa5763e05910d48bc7a6ab949491329f2737856e24d3c1ab9",
+      "computed_sample_signature": "a08d2599bd3a679fa5763e05910d48bc7a6ab949491329f2737856e24d3c1ab9"
+    },
+    "metrics": {
+      "miou": 0.7312330855433906,
+      "fire_iou": 0.46785654958554646,
+      "fire_f1": 0.6374690307024354,
+      "classification_accuracy": 0.9946350469821817,
+      "precision": 0.592229153524312,
+      "recall": 0.690192234384172,
+      "f1": 0.6374690307024354,
+      "false_positives_pixels": 17453,
+      "false_negatives_pixels": 11378,
+      "true_positives_pixels": 25348,
+      "true_negatives_pixels": 5319773,
+      "parameter_count": 1647901,
+      "model_size_mb": 6.286243438720703,
+      "latency_mean_ms": 43.82152199948905,
+      "latency_p95_ms": 47.52165000572859,
+      "fps": 22.819837248274027
+    },
+    "checkpoint_path": "c:\\SPJAIN\\BushFire-Detection\\models\\trained\\sota_baselines\\thermalfusion_net_2023\\best_model.pth",
+    "dataset_root": "c:\\SPJAIN\\BushFire-Detection\\data\\processed\\Output\\Segmentation_Augmented",
+    "image_size": 256
+  }
+}

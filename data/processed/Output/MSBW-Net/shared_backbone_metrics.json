@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.1",
+  "experiment": {
+    "name": "MSBW-Net Shared-Backbone Evaluation",
+    "timestamp_utc": "2026-04-03T14:51:29.198920+00:00",
+    "repo": "HungDSabc/BushFire-Detection",
+    "model_type": "shared-backbone-dual-head",
+    "checkpoints": {
+      "best_training_checkpoint": "models\\trained\\msbw-net_shared_backbone\\best_msbw_model.pth"
+    }
+  },
+  "strict_test_evaluation": {
+    "split": {
+      "source": "loaded",
+      "locked_split_file": "C:\\SPJAIN\\BushFire-Detection\\data\\processed\\Output\\DICTA\\flame_strict_split_seed42.json",
+      "train_samples": 646,
+      "val_samples": 80,
+      "test_samples": 82,
+      "total_samples": 808,
+      "disjoint": true,
+      "split_signature": "9158fd7a915daf798392349c0b6c781b6e89fe6d468db4785026eac89bed695b",
+      "sample_signature": "a08d2599bd3a679fa5763e05910d48bc7a6ab949491329f2737856e24d3c1ab9"
+    },
+    "metrics": {
+      "classification_accuracy": 1.0,
+      "classification_precision": 1.0,
+      "classification_recall": 1.0,
+      "classification_f1": 1.0,
+      "miou": 0.8499054876652882,
+      "background_iou": 0.9976575307514769,
+      "fire_iou": 0.7021534445790995,
+      "fire_precision": 0.8435120203076004,
+      "fire_recall": 0.8073171603129801,
+      "fire_f1": 0.8250177994413713,
+      "classification_tp": 82,
+      "classification_fp": 0,
+      "classification_tn": 0,
+      "classification_fn": 0,
+      "fire_pixel_tp": 22596,
+      "fire_pixel_fp": 4192,
+      "fire_pixel_tn": 4082251,
+      "fire_pixel_fn": 5393,
+      "class_ious": [
+        0.9976575307514769,
+        0.7021534445790995
+      ],
+      "total_samples": 82
+    },
+    "checkpoint_path": "C:\\SPJAIN\\BushFire-Detection\\models\\trained\\msbw-net_shared_backbone\\best_msbw_model.pth",
+    "dataset_root": "C:\\SPJAIN\\BushFire-Detection\\data\\processed\\Output\\Segmentation_Augmented",
+    "image_size": 224
+  },
+  "model": {
+    "parameters": 458300,
+    "size_mb": 1.7482757568359375
+  },
+  "latency_ms": {
+    "p50": 9.098875999625307,
+    "p95": 10.197385002538795,
+    "p99": 9.098875999625307,
+    "mean_ms": 9.098875999625307,
+    "fps": 109.90368481130858,
+    "status": "complete",
+    "note": "Measured from dummy tensors; use cell 37 for test-set latency"
+  }
+}

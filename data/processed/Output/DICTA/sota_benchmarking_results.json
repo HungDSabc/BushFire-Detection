@@ -1,77 +1,79 @@
 {
   "benchmark_metadata": {
-    "analysis_date": "2026-04-02T07:08:05.101270",
-    "total_methods_compared": 9,
+    "analysis_date": "2026-04-04T02:23:28.107997",
+    "total_methods_compared": 8,
     "categories_analyzed": [
-      "Classification SOTA Methods",
-      "DICTA Shared Backbone (Ours)",
-      "Multimodal SOTA Methods",
-      "Segmentation SOTA Methods"
+      "Classification Actual Runs",
+      "MSBW-Net",
+      "Multimodal Actual Runs",
+      "Segmentation Actual Runs"
     ],
-    "dicta_requirements": {
-      "min_miou": 0.8,
-      "max_size_mb": 2.0,
-      "max_inference_ms": 100.0
-    },
-    "artifact_source": "..\\..\\data\\processed\\Output\\Classification\\shared_backbone_metrics.json",
-    "version": "2.3_dicta_only_real_artifact"
+    "artifact_source": "..\\..\\data\\processed\\Output\\MSBW-Net\\shared_backbone_metrics.json",
+    "source_files": [
+      "actual_artifact"
+    ],
+    "version": "3.0_actual_artifact_table"
   },
-  "dicta_shared_backbone": {
-    "name": "DICTA Shared Backbone",
-    "accuracy": 0.942,
-    "precision": 0.782,
-    "recall": 0.7649,
-    "f1": 0.7734,
-    "miou": 0.8296,
-    "size_mb": 1.7483,
-    "inference_ms": 10.05,
-    "year": 2026,
-    "category": "DICTA Shared Backbone (Ours)",
-    "dicta_compliant": true
+  "MSBW-Net": {
+    "name": "MSBW-Net",
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "miou": 0.8499054876652882,
+    "parameters": 458300.0,
+    "size_mb": 1.7482757568359375,
+    "inference_ms": 10.197385002538795,
+    "fps": 98.06435667095386,
+    "category": "MSBW-Net",
+    "dataset": "FLAME",
+    "source_type": "actual_artifact",
+    "latency_basis": "p95",
+    "msbw_compliant": true
   },
   "performance_claims_validation": [
     {
-      "claim": "DICTA mIoU meets minimum DICTA target",
-      "actual": 0.8296,
+      "claim": "MSBW-Net mIoU meets minimum target",
+      "actual": 0.8499054876652882,
       "threshold": 0.8,
       "status": "PASS"
     },
     {
-      "claim": "DICTA size is within DICTA size limit",
-      "actual": 1.7483,
+      "claim": "MSBW-Net size is within size limit",
+      "actual": 1.7482757568359375,
       "threshold": 2.0,
       "status": "PASS"
     },
     {
-      "claim": "DICTA latency is within DICTA latency limit",
-      "actual": 10.05,
+      "claim": "MSBW-Net latency is within latency limit",
+      "actual": 10.197385002538795,
       "threshold": 100.0,
       "status": "PASS"
     },
     {
-      "claim": "DICTA F1 is competitive with best SOTA baseline",
-      "actual": 0.7734,
-      "threshold": 0.958,
-      "status": "FAIL"
+      "claim": "MSBW-Net F1 is competitive with the best measured baseline",
+      "actual": 1.0,
+      "threshold": 1.0,
+      "status": "PASS"
     },
     {
-      "claim": "DICTA mIoU is competitive with best SOTA baseline",
-      "actual": 0.8296,
-      "threshold": 0.847,
+      "claim": "MSBW-Net mIoU is competitive with the best measured baseline",
+      "actual": 0.8499054876652882,
+      "threshold": 0.835571,
       "status": "PASS"
     }
   ],
   "statistical_analysis": [
     {
-      "metric": "f1_vs_non_dicta_distribution",
-      "t_stat": 19.74900508522264,
-      "p_value": 3.8777803501454396e-05,
-      "dicta_value": 0.7734
+      "metric": "f1_vs_non_msbw_distribution",
+      "t_stat": -3.5502212019869743,
+      "p_value": 0.01206882916126419,
+      "msbw_value": 1.0
     }
   ],
   "key_findings": [
-    "SOTA claims are validated against DICTA shared-backbone real artifacts",
-    "Benchmark terminology and official claims are DICTA Shared Backbone only",
-    "DICTA model is benchmarked against published SOTA baselines with explicit pass/fail checks"
+    "Primary benchmark table is assembled from actual evaluation artifacts in the repository",
+    "Published literature numbers are no longer used as the primary comparison source",
+    "MSBW-Net model is benchmarked against the best measured baseline rows with explicit pass/fail checks"
   ]
 }

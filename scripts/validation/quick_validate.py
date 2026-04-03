@@ -83,7 +83,7 @@ def check_project_structure():
     required_paths = [
         'models/mobilenet_hybrid.py',
         'models/loss_functions.py',
-        'notebooks/02_training/DICTA_Shared_Backbone.ipynb',
+        'notebooks/02_training/MSBW-Net_Shared_Backbone.ipynb',
         'notebooks/03_analysis/SOTA_Benchmarking.ipynb',
         'requirements.txt',
         'LICENSE'

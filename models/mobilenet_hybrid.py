@@ -3,7 +3,7 @@ FLAME Hybrid Fire Detection - MobileNet Shared Backbone Architecture
 BDS DSC312 - Computer Vision with Multi-modal Models & Analytics
 
 Lightweight shared-backbone architecture for real-time fire detection
-optimized for DICTA 2026 Challenge requirements.
+optimized for MSBW-Net 2026 Challenge requirements.
 """
 
 import torch
@@ -183,7 +183,7 @@ class SegmentationHead(nn.Module):
 class FLAMEHybridModel(nn.Module):
     """
     Complete FLAME Hybrid model with shared backbone architecture.
-    Optimized for DICTA 2026 Challenge requirements.
+    Optimized for MSBW-Net 2026 Challenge requirements.
     
     Key Features:
     - Shared MobileNetV3 backbone for efficiency

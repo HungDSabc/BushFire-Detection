@@ -1,11 +1,11 @@
-# DICTA Edge Deployment Guide
+# MSBW-Net Edge Deployment Guide
 ## Deploying Fire Detection Model to Edge Devices (Jetson Nano/Xavier)
 
 ---
 
 ## 1. Overview
 
-The DICTA fire detection model is optimized for edge deployment:
+The MSBW-Net fire detection model is optimized for edge deployment:
 - **Model Size**: 1.75 MB (ultra-lightweight)
 - **Parameters**: 458K (extreme compression)
 - **Latency**: 13.2ms @ 224x224 (P95)
@@ -96,7 +96,7 @@ pip install tensorrt
 
 ```bash
 # Copy project to device
-scp -r models/trained/dicta_shared_backbone/best_dicta_model.pth \
+scp -r models/trained/msbw-net_shared_backbone/best_dicta_model.pth \
     nvidia@<device-ip>:/home/nvidia/fire_detection/models/
 
 # Copy inference script
@@ -104,7 +104,7 @@ scp scripts/inference_pipeline.py \
     nvidia@<device-ip>:/home/nvidia/fire_detection/scripts/
 
 # Copy config
-scp config/dicta_config.yaml \
+scp config/msbw-net_config.yaml \
     nvidia@<device-ip>:/home/nvidia/fire_detection/config/
 ```
 

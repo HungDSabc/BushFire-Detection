@@ -1,5 +1,5 @@
 """
-Inference Pipeline for DICTA Fire Detection
+Inference Pipeline for MSBW-Net Fire Detection
 ==========================================
 Load trained model and perform inference on images.
 
@@ -19,7 +19,7 @@ from datetime import datetime
 
 
 class InferencePipeline:
-    """Complete inference pipeline for DICTA model."""
+    """Complete inference pipeline for MSBW-Net model."""
     
     def __init__(self, model_path, device='auto', config_path=None):
         """
@@ -186,7 +186,7 @@ class InferencePipeline:
 
 
 def main():
-    parser = argparse.ArgumentParser(description='DICTA Fire Detection Inference')
+    parser = argparse.ArgumentParser(description='MSBW-Net Fire Detection Inference')
     parser.add_argument('--model', required=True, help='Path to trained model')
     parser.add_argument('--image', help='Path to single image')
     parser.add_argument('--image-dir', help='Path to image directory')

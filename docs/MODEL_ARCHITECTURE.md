@@ -1,10 +1,10 @@
-# DICTA Model Architecture Specification
+# MSBW-Net Model Architecture Specification
 
 ---
 
 ## 1. Model Overview
 
-**DICTA Fire Detection Network**
+**MSBW-Net Fire Detection Network**
 
 A shared-backbone dual-head architecture optimized for real-time fire detection on edge devices.
 
@@ -27,7 +27,7 @@ Deployment:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                    DICTA Architecture Overview                       │
+│                    MSBW-Net Architecture Overview                    │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                      │
 │  Input: RGBT Image (4 channels, 224x224)                           │
